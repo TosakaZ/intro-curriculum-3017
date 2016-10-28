@@ -44,6 +44,13 @@ const server = http.createServer(basic, (req, res) => {
           firstItem: '寿司',
           secondItem: 'ピザ'
         }));
+      } else {
+      	res.write('<!DOCTYPE html><html lang="ja"><head><meta charset="utf-8"></head><body><h1>' + 
+      	'アンケートページは以下のリンクから進めます。</h1>' + 
+      	'<ul><li><a href="http://localhost:8000/enquetes/yaki-shabu">焼き肉 vs しゃぶしゃぶ</a></li>' + 
+      	'<li><a href="http://localhost:8000/enquetes/rice-bread">ごはん vs パン</a></li>' + 
+      	'<li><a href="http://localhost:8000/enquetes/sushi-pizza">寿司 vs ピザ</a></li></ul>' + 
+      	'<p><a href="/logout">ログアウト</a></p></body></html>');
       }
       res.end();
       break;
